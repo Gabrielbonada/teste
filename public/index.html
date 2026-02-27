@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Metadados e Configurações Básicas -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robson Reinoso - Massoterapia Premium</title>
+    
+    <!-- Fontes Externas (Google Fonts) -->
+    <!-- Playfair Display: fonte elegante para títulos -->
+    <!-- Poppins: fonte moderna para textos corpo -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Biblioteca AOS (Animate On Scroll) para animações ao rolar a página -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="./CSS/estilos.css">
+</head>
+
+<body>
+
+    <!-- Overlay para escurecer fundo quando menu está aberto -->
+    <div id="sobreposicao" class="sobreposicao"></div>
+
+    <!-- ================================ -->
+    <!-- CABEÇALHO PREMIUM               -->
+    <!-- ================================ -->
+    <header class="cabecalho-premium">
+        <div class="container-cabecalho">
+            <!-- Logo e Marca -->
+            <div class="logo-premium">
+                <span class="icone-logo"></span> <!-- logo-->
+                <span class="texto-logo">Robson <strong>Reinoso</strong></span>
+            </div>
+
+            <!-- Navegação Desktop (Oculta em dispositivos pequenos) -->
+            <nav class="navegacao-desktop">
+                <a href="#inicio" class="link-navegacao">Início</a>
+                <a href="#servicos" class="link-navegacao">Serviços</a>
+                <a href="#sobre" class="link-navegacao">Sobre</a>
+                <a href="#agendamento" class="link-navegacao">Agendamento</a>
+                <a href="#faq" class="link-navegacao">FAQ</a>
+            </nav>
+
+            <!-- Ações do Cabeçalho (Botão Agendar e Menu Hambúrguer) -->
+            <div class="acoes-cabecalho">
+                <a href="#agendamento" class="botao-cabecalho-primario">Agendar Agora</a>
+                <!-- Botão Menu Hambúrguer (Visível em todas as resoluções) -->
+                <button id="alternador-menu" class="botao-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================================ -->
+    <!-- MENU LATERAL (SIDEBAR)          -->
+    <!-- ================================ -->
+    <nav id="barra-lateral" class="barra-lateral-mobile">
+        <!-- Botão para Fechar Menu -->
+        <button id="fechar-barra" class="botao-fechar">&times;</button>
+        
+        <!-- Links de Navegação -->
+        <ul class="links-navegacao-mobile">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#agendamento">Agendamento</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            
+            <!-- Seção de Login e Cadastro -->
+            <li class="secao-login-cadastro-mobile">
+                <a href="./HTML/login.html?tab=login" class="link-login-nav">Login</a>
+                <a href="./HTML/login.html?tab=cadastro" class="link-cadastro-nav">Cadastro</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- ================================ -->
+    <!-- SEÇÃO HERÓI (HERO)              -->
+    <!-- ================================ -->
+    <section class="secao-heroi-premium" id="inicio">
+        <div class="conteudo-heroi">
+            <!-- Texto Principal da Seção Herói -->
+            <div class="texto-heroi" data-aos="fade-up" data-aos-duration="1000">
+                <!-- Badge de Boas-vindas -->
+                <span class="badge-heroi">Bem-vindo à Saúde</span>
+                
+                <!-- Título Principal -->
+                <h1>Recupere Seu Bem-Estar</h1>
+                
+                <!-- Descrição -->
+                <p>Massoterapia profissional com 25 anos de experiência. Técnicas comprovadas para aliviar dores, tensões e restaurar sua qualidade de vida.</p>
+                
+                <!-- Botões de Ação -->
+                <div class="botoes-heroi">
+                    <a href="#agendamento" class="botao-primario">Agendar Avaliação</a>
+                    <a href="#sobre" class="botao-secundario">Saiba Mais</a>
+                </div>
+            </div>
+
+            <!-- Imagem da Seção Herói -->
+            <div class="imagem-heroi" data-aos="fade-left" data-aos-duration="1000">
+                <div class="envoltorio-imagem">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=700&fit=crop" alt="Massoterapia Profissional">
+                    <!-- Badge sobre a Imagem -->
+                    <div class="badge-imagem">25 Anos de Experiência</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================ -->
+    <!-- SEÇÃO SERVIÇOS / MASSAGENS      -->
+    <!-- ================================ -->
+    <section class="secao-servicos" id="servicos">
+        <div class="container">
+            <!-- Cabeçalho da Seção -->
+            <div class="cabecalho-secao" data-aos="fade-up">
+                <span class="badge-secao">Nossos Serviços</span>
+                <h2>Técnicas Especializadas</h2>
+                <p>Oferecemos uma variedade de massagens terapêuticas para diferentes necessidades</p>
+            </div>
+
+            <!-- Grade de Serviços -->
+            <div class="grade-servicos">
+                <!-- Card 1: Massagem Relaxante -->
+                <div class="card-servico" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icone-servico">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Massagem Relaxante</h3>
+                    <p>Alívio total de tensões com técnicas suaves e relaxantes. Perfeita para reduzir o estresse e melhorar a qualidade do sono.</p>
+                    <ul class="recursos-servico">
+                        <li>Duração: 50-60 min</li>
+                        <li>Técnicas suaves</li>
+                        <li>Ambiente acolhedor</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Massagem Terapêutica (Destaque) -->
+                <div class="card-servico " data-aos="fade-up" data-aos-delay="200">
+                    <!--<div class="badge-servico">Popular</div>-->
+                    <div class="icone-servico">
+                        <i class="fas fa-hand-holding-medical"></i>
+                    </div>
+                    <h3>Massagem Terapêutica</h3>
+                    <p>Tratamento profissional para dores e desconfortos musculares. Ideal para recuperação de lesões e alívio de dores crônicas.</p>
+                    <ul class="recursos-servico">
+                        <li>Duração: 60-90 min</li>
+                        <li>Técnicas profundas</li>
+                        <li>Resultados comprovados</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Drenagem Linfática -->
+                <div class="card-servico" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icone-servico">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Drenagem Linfática</h3>
+                    <p>Estimulação do sistema linfático para melhor circulação. Reduz inchaço e melhora a eliminação de toxinas.</p>
+                    <ul class="recursos-servico">
+                        <li>Duração: 50-60 min</li>
+                        <li>Técnica especializada</li>
+                        <li>Resultados visíveis</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4: Massagem Desportiva -->
+                <div class="card-servico" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icone-servico">
+                        <i class="fas fa-heart-pulse"></i>
+                    </div>
+                    <h3>Massagem Desportiva</h3>
+                    <p>Desenvolvida para atletas e pessoas ativas. Melhora o desempenho e acelera a recuperação muscular.</p>
+                    <ul class="recursos-servico">
+                        <li>Duração: 60 min</li>
+                        <li>Técnicas dinâmicas</li>
+                        <li>Para atletas</li>
+                    </ul>
+                </div>
+
+                <!-- Card 5: Massagem Ayurvédica -->
+                <div class="card-servico" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icone-servico">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Massagem Ayurvédica</h3>
+                    <p>Técnica milenar que equilibra corpo e mente. Utiliza óleos naturais para restaurar a harmonia energética.</p>
+                    <ul class="recursos-servico">
+                        <li>Duração: 60-90 min</li>
+                        <li>Óleos naturais</li>
+                        <li>Equilíbrio energético</li>
+                    </ul>
+                </div>
+
+                <!-- Card 6: Atendimento em Domicílio -->
+                <div class="card-servico" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icone-servico">
+                        <i class="fas fa-person-hiking"></i>
+                    </div>
+                    <h3>Atendimento em Domicílio</h3>
+                    <p>Levamos nossos serviços até você. Conforto e conveniência para sua saúde, onde você estiver.</p>
+                    <ul class="recursos-servico">
+                        <li>Flexibilidade de horário</li>
+                        <li>Ambiente familiar</li>
+                        <li>Comodidade garantida</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================ -->
+    <!-- SEÇÃO SOBRE                     -->
+    <!-- ================================ -->
+    <section class="secao-sobre" id="sobre">
+        <div class="container">
+            <div class="conteudo-sobre">
+                <!-- Imagem do Profissional -->
+                <div class="imagem-sobre" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=600&fit=crop" alt="Robson Reinoso">
+                    <div class="badge-sobre">Profissional Certificado</div>
+                </div>
+
+                <!-- Texto Sobre -->
+                <div class="texto-sobre" data-aos="fade-left">
+                    <span class="badge-secao">Conheça o Profissional</span>
+                    <h2>Robson Reinoso</h2>
+                    <p class="introducao-sobre">Com mais de 25 anos de experiência em massoterapia, sou dedicado a proporcionar o melhor atendimento e resultados para meus clientes.</p>
+
+                    <!-- Destaques Sobre -->
+                    <div class="destaques-sobre">
+                        <!-- Destaque 1 -->
+                        <div class="item-destaque">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Formação Certificada</h4>
+                                <p>Certificações internacionais em técnicas de massoterapia</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Destaque 2 -->
+                        <div class="item-destaque">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Experiência Comprovada</h4>
+                                <p>Mais de 10 mil clientes satisfeitos ao longo dos anos</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Destaque 3 -->
+                        <div class="item-destaque">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Metodologia Inovadora</h4>
+                                <p>Combinação de técnicas tradicionais e modernas</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Destaque 4 -->
+                        <div class="item-destaque">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Atendimento Personalizado</h4>
+                                <p>Cada sessão é adaptada às necessidades específicas do cliente</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botão de Ação -->
+                    <a href="#agendamento" class="botao-primario">Agende uma Consulta</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================ -->
+    <!-- SEÇÃO AGENDAMENTO               -->
+    <!-- ================================ -->
+    <section class="secao-agendamento" id="agendamento">
+        <div class="container">
+            <!-- Cabeçalho da Seção -->
+            <div class="cabecalho-secao" data-aos="fade-up">
+                <span class="badge-secao">Reserve Seu Horário</span>
+                <h2>Agende Sua Sessão</h2>
+                <p>Escolha o melhor horário para você e comece sua jornada de bem-estar</p>
+            </div>
+
+            <!-- Conteúdo de Agendamento -->
+            <div class="conteudo-agendamento">
+                <!-- Formulário de Agendamento -->
+                <div class="formulario-agendamento" data-aos="fade-right">
+                    <form id="formulario-agendamento">
+                        <!-- Campo: Nome Completo -->
+                        <div class="grupo-formulario">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+
+                        <!-- Campo: Email -->
+                        <div class="grupo-formulario">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <!-- Campo: Telefone -->
+                        <div class="grupo-formulario">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" required>
+                        </div>
+
+                        <!-- Linha: Serviço e Data -->
+                        <div class="linha-formulario">
+                            <!-- Campo: Serviço -->
+                            <div class="grupo-formulario">
+                                <label for="servico">Serviço</label>
+                                <select id="servico" name="servico" required>
+                                    <option value="">Selecione um serviço</option>
+                                    <option value="relaxante">Massagem Relaxante</option>
+                                    <option value="terapeutica">Massagem Terapêutica</option>
+                                    <option value="drenagem">Drenagem Linfática</option>
+                                    <option value="desportiva">Massagem Desportiva</option>
+                                    <option value="ayurvedica">Massagem Ayurvédica</option>
+                                </select>
+                            </div>
+
+                            <!-- Campo: Data -->
+                            <div class="grupo-formulario">
+                                <label for="data">Data Desejada</label>
+                                <input type="date" id="data" name="data" required>
+                            </div>
+                        </div>
+
+                        <!-- Campo: Observações -->
+                        <div class="grupo-formulario">
+                            <label for="mensagem">Observações (opcional)</label>
+                            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva suas necessidades ou dúvidas..."></textarea>
+                        </div>
+
+                        <!-- Botão Enviar -->
+                        <button type="submit" class="botao-primario botao-completo">Confirmar Agendamento</button>
+                    </form>
+                </div>
+
+                <!-- Informações de Contato -->
+                <div class="informacoes-agendamento" data-aos="fade-left">
+                    <!-- Card: Horários -->
+                    <div class="card-informacao">
+                        <i class="fas fa-clock"></i>
+                        <h3>Horários</h3>
+                        <p>Segunda a Sexta: 08h - 20h<br>Sábado: 09h - 14h</p>
+                    </div>
+
+                    <!-- Card: Localização -->
+                    <div class="card-informacao">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Localização</h3>
+                        <p>Rua das Flores, 123<br>Centro - São Paulo, SP</p>
+                    </div>
+
+                    <!-- Card: Contato -->
+                    <div class="card-informacao">
+                        <i class="fas fa-phone"></i>
+                        <h3>Contato</h3>
+                        <p>(11) 9999-9999<br>contato@robsonreinoso.com</p>
+                    </div>
+
+                    <!-- Card: Formas de Pagamento -->
+                    <div class="card-informacao">
+                        <i class="fas fa-credit-card"></i>
+                        <h3>Formas de Pagamento</h3>
+                        <p>Dinheiro, PIX, Cartão<br>Parcelamento disponível</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================ -->
+    <!-- SEÇÃO FAQ (PERGUNTAS FREQUENTES)-->
+    <!-- ================================ -->
+    <section class="secao-faq" id="faq">
+        <div class="container">
+            <!-- Cabeçalho da Seção -->
+            <div class="cabecalho-secao" data-aos="fade-up">
+                <span class="badge-secao">Dúvidas Frequentes</span>
+                <h2>Perguntas e Respostas</h2>
+                <p>Encontre respostas para as perguntas mais comuns</p>
+            </div>
+
+            <!-- Container de FAQ -->
+            <div class="container-faq">
+                <!-- Item FAQ 1 -->
+                <div class="item-faq" data-aos="fade-up">
+                    <div class="pergunta-faq">
+                        <h3>Qual é a duração de uma sessão?</h3>
+                        <span class="icone-faq"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="resposta-faq">
+                        <p>As sessões de massagem terapêutica têm duração de 50 a 60 minutos, podendo variar conforme a necessidade do cliente. Algumas técnicas especializadas podem durar até 90 minutos.</p>
+                    </div>
+                </div>
+
+                <!-- Item FAQ 2 -->
+                <div class="item-faq" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pergunta-faq">
+                        <h3>Quantas sessões são necessárias para ver resultados?</h3>
+                        <span class="icone-faq"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="resposta-faq">
+                        <p>Muitos pacientes já sentem alívio na primeira sessão. Para resultados mais duradouros e transformadores, recomenda-se um tratamento contínuo de 4 a 8 sessões, dependendo do caso.</p>
+                    </div>
+                </div>
+
+                <!-- Item FAQ 3 -->
+                <div class="item-faq" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pergunta-faq">
+                        <h3>Qual é o valor de uma sessão?</h3>
+                        <span class="icone-faq"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="resposta-faq">
+                        <p>Os valores variam conforme o tipo de massagem e a duração. Oferecemos pacotes promocionais e descontos para clientes recorrentes. Entre em contato para uma cotação personalizada.</p>
+                    </div>
+                </div>
+
+                <!-- Item FAQ 4 -->
+                <div class="item-faq" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pergunta-faq">
+                        <h3>Vocês atendem em domicílio?</h3>
+                        <span class="icone-faq"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="resposta-faq">
+                        <p>Sim! Oferecemos atendimento em domicílio com taxa adicional. Consulte disponibilidade pelo WhatsApp. Levamos todo o equipamento necessário para garantir conforto e qualidade.</p>
+                    </div>
+                </div>
+
+                <!-- Item FAQ 5 -->
+                <div class="item-faq" data-aos="fade-up" data-aos-delay="400">
+                    <div class="pergunta-faq">
+                        <h3>Existe contraindicação para massagem?</h3>
+                        <span class="icone-faq"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="resposta-faq">
+                        <p>Algumas condições podem ter contraindicações. Recomendamos consultar um profissional de saúde antes da primeira sessão, especialmente se você tem problemas cardíacos ou está grávida.</p>
+                    </div>
+                </div>
+
+                <!-- Item FAQ 6 -->
+                <div class="item-faq" data-aos="fade-up" data-aos-delay="500">
+                    <div class="pergunta-faq">
+                        <h3>Como faço para agendar uma sessão?</h3>
+                        <span class="icone-faq"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="resposta-faq">
+                        <p>Você pode agendar pelo formulário acima, pelo WhatsApp, ou entrando em contato diretamente. Oferecemos flexibilidade de horários para sua conveniência.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================ -->
+    <!-- RODAPÉ (FOOTER)                 -->
+    <!-- ================================ -->
+    <footer class="rodape-premium">
+        <div class="container">
+            <!-- Conteúdo do Rodapé -->
+            <div class="conteudo-rodape">
+                <!-- Seção 1: Sobre a Empresa -->
+                <div class="secao-rodape">
+                    <h3>Robson Reinoso</h3>
+                    <p>Massoterapia profissional com 25 anos de experiência dedicados ao seu bem-estar.</p>
+                    <!-- Links de Redes Sociais -->
+                    <div class="links-sociais">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Seção 2: Links Rápidos -->
+                <div class="secao-rodape">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#agendamento">Agendamento</a></li>
+                    </ul>
+                </div>
+
+                <!-- Seção 3: Contato -->
+                <div class="secao-rodape">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> (11) 9999-9999</li>
+                        <li><i class="fas fa-envelope"></i> contato@robsonreinoso.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> São Paulo, SP</li>
+                    </ul>
+                </div>
+
+                <!-- Seção 4: Horários -->
+                <div class="secao-rodape">
+                    <h4>Horários</h4>
+                    <ul>
+                        <li>Seg-Sex: 08h - 20h</li>
+                        <li>Sábado: 09h - 14h</li>
+                        <li>Domingo: Fechado</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Rodapé Inferior -->
+            <div class="rodape-inferior">
+                <p>&copy; 2026 Robson Reinoso Massoterapia. Todos os direitos reservados.</p>
+              
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================================ -->
+    <!-- SCRIPTS EXTERNOS                -->
+    <!-- ================================ -->
+    
+    <!-- Biblioteca AOS (Animate On Scroll) -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+    <!-- Script Principal -->
+    <script src="./JS/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,712 @@
+/**
+ * ================================
+ * ARQUIVO: login-estilos.css
+ * DESCRIÇÃO: Estilos para a página de login e cadastro
+ * AUTOR: Desenvolvedor
+ * DATA: 2024
+ * ================================
+ */
+
+/**
+ * SEÇÃO 1: VARIÁVEIS E ESTILOS GLOBAIS
+ */
+
+:root {
+    /* Cores */
+    --cor-primaria: #2d7a3e;
+    --cor-primaria-clara: #5aa12f;
+    --cor-primaria-escura: #1a4d2e;
+    --cor-secundaria: #f5a623;
+    --cor-acento: #e8f5e9;
+    --cor-escura: #1a1a1a;
+    --cor-clara: #f8f9fa;
+    --cor-cinza: #6c757d;
+    --cor-borda: #e0e0e0;
+    
+    /* Sombras */
+    --sombra-pequena: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --sombra-media: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --sombra-grande: 0 16px 48px rgba(0, 0, 0, 0.15);
+    
+    /* Transições */
+    --transicao: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/**
+ * Reset e Estilos Básicos
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--cor-escura);
+    background: #fff;
+    line-height: 1.6;
+}
+
+/**
+ * SEÇÃO 2: CABEÇALHO DE LOGIN
+ */
+
+.cabecalho-login {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--sombra-pequena);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.container-cabecalho {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/**
+ * Logo de Login
+ */
+
+.logo-login {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: var(--transicao);
+}
+
+.logo-login:hover {
+    transform: translateX(2px);
+}
+
+.icone-logo {
+    font-size: 24px;
+}
+
+.logo-login strong {
+    color: var(--cor-primaria-clara);
+    font-weight: 800;
+}
+
+/**
+ * Botão Voltar
+ */
+
+.botao-voltar {
+    background: linear-gradient(135deg, var(--cor-primaria-clara), var(--cor-primaria));
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: var(--transicao);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(90, 161, 47, 0.25);
+}
+
+.botao-voltar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(90, 161, 47, 0.35);
+}
+
+/**
+ * SEÇÃO 3: ENVOLTÓRIO DE LOGIN
+ * Layout com dois lados (imagem e formulário)
+ */
+
+.envoltorio-login {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 70px);
+    background: white;
+}
+
+/**
+ * Lado Esquerdo - Imagem
+ */
+
+.lado-imagem-login {
+    background: linear-gradient(135deg, var(--cor-acento), #f0f8f2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Elemento decorativo de fundo */
+.lado-imagem-login::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(90, 161, 47, 0.1), transparent);
+    border-radius: 50%;
+    animation: flutuar 20s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(30px); }
+}
+
+.container-imagem {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--sombra-grande);
+    z-index: 1;
+}
+
+.container-imagem img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.container-imagem:hover img {
+    transform: scale(1.05);
+}
+
+/**
+ * Sobreposição da Imagem
+ */
+
+.sobreposicao-imagem {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+    padding: 40px 20px 30px;
+    color: white;
+    text-align: center;
+}
+
+.sobreposicao-imagem h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.sobreposicao-imagem p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/**
+ * SEÇÃO 4: LADO FORMULÁRIO
+ */
+
+.lado-formulario-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background: white;
+}
+
+.container-formulario {
+    width: 100%;
+    max-width: 420px;
+}
+
+/**
+ * SEÇÃO 5: ABAS DO FORMULÁRIO
+ */
+
+.abas-formulario {
+    display: flex;
+    gap: 0;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--cor-borda);
+}
+
+.botao-aba {
+    flex: 1;
+    padding: 15px;
+    background: none;
+    border: none;
+    color: var(--cor-cinza);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transicao);
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.botao-aba:hover {
+    color: var(--cor-primaria-clara);
+}
+
+/* Aba Ativa */
+.botao-aba.ativo {
+    color: var(--cor-primaria);
+    border-bottom-color: var(--cor-primaria-clara);
+}
+
+.botao-aba i {
+    font-size: 16px;
+}
+
+/**
+ * SEÇÃO 6: CONTEÚDO DO FORMULÁRIO
+ */
+
+.conteudo-formulario {
+    display: none;
+    animation: aparecer 0.3s ease;
+}
+
+/* Conteúdo Ativo */
+.conteudo-formulario.ativo {
+    display: block;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.conteudo-formulario h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--cor-escura);
+    margin-bottom: 8px;
+}
+
+.subtitulo-formulario {
+    color: var(--cor-cinza);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/**
+ * SEÇÃO 7: GRUPOS DO FORMULÁRIO
+ */
+
+.formulario-autenticacao {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grupo-formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-formulario label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--cor-escura);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/**
+ * Envoltório de Input
+ */
+
+.envoltorio-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.envoltorio-input i {
+    position: absolute;
+    left: 15px;
+    color: var(--cor-primaria-clara);
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.envoltorio-input input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: var(--transicao);
+}
+
+.envoltorio-input input:focus {
+    outline: none;
+    border-color: var(--cor-primaria-clara);
+    box-shadow: 0 0 0 3px rgba(90, 161, 47, 0.1);
+}
+
+.envoltorio-input input::placeholder {
+    color: #bbb;
+}
+
+/**
+ * SEÇÃO 8: OPÇÕES DO FORMULÁRIO
+ */
+
+.opcoes-formulario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+.label-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: var(--cor-cinza);
+    transition: color 0.3s ease;
+}
+
+.label-checkbox:hover {
+    color: var(--cor-escura);
+}
+
+.label-checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: var(--cor-primaria-clara);
+}
+
+/* Label com Largura Completa */
+.label-checkbox.largura-completa {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.label-checkbox a {
+    color: var(--cor-primaria-clara);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.label-checkbox a:hover {
+    text-decoration: underline;
+}
+
+.link-esqueceu {
+    color: var(--cor-primaria-clara);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.link-esqueceu:hover {
+    color: var(--cor-primaria);
+}
+
+/**
+ * SEÇÃO 9: BOTÃO ENVIAR
+ */
+
+.botao-enviar {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--cor-primaria-clara), var(--cor-primaria));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transicao);
+    box-shadow: 0 8px 20px rgba(90, 161, 47, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.botao-enviar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(90, 161, 47, 0.4);
+}
+
+.botao-enviar:active {
+    transform: translateY(0);
+}
+
+.botao-enviar i {
+    font-size: 16px;
+}
+
+/**
+ * SEÇÃO 10: DIVISOR DO FORMULÁRIO
+ */
+
+.divisor-formulario {
+    position: relative;
+    text-align: center;
+    margin: 20px 0;
+    color: var(--cor-cinza);
+    font-size: 12px;
+}
+
+.divisor-formulario::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--cor-borda);
+}
+
+.divisor-formulario span {
+    position: relative;
+    background: white;
+    padding: 0 10px;
+}
+
+/**
+ * SEÇÃO 11: BOTÕES SOCIAIS
+ */
+
+.botoes-sociais {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.botao-social {
+    padding: 11px 16px;
+    border: 1px solid var(--cor-borda);
+    background: white;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transicao);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.botao-social:hover {
+    border-color: var(--cor-primaria-clara);
+    background: var(--cor-acento);
+    color: var(--cor-primaria);
+}
+
+.botao-social i {
+    font-size: 16px;
+}
+
+.botao-google {
+    color: #1f2937;
+}
+
+.botao-google:hover {
+    border-color: #1f2937;
+}
+
+.botao-whatsapp {
+    color: #25d366;
+}
+
+.botao-whatsapp:hover {
+    border-color: #25d366;
+}
+
+/**
+ * SEÇÃO 12: OVERLAY
+ */
+
+.sobreposicao {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+}
+
+.sobreposicao.ativa {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/**
+ * SEÇÃO 13: RESPONSIVIDADE
+ */
+
+@media (max-width: 768px) {
+    /* Layout em Coluna */
+    .envoltorio-login {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    /* Oculta Imagem */
+    .lado-imagem-login {
+        display: none;
+    }
+
+    /* Ajusta Formulário */
+    .lado-formulario-login {
+        padding: 30px 20px;
+        min-height: calc(100vh - 70px);
+    }
+
+    .container-formulario {
+        max-width: 100%;
+    }
+
+    .abas-formulario {
+        margin-bottom: 30px;
+    }
+
+    .botao-aba {
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    .botao-aba i {
+        display: none;
+    }
+
+    .conteudo-formulario h1 {
+        font-size: 24px;
+    }
+
+    .subtitulo-formulario {
+        margin-bottom: 25px;
+    }
+
+    .formulario-autenticacao {
+        gap: 18px;
+    }
+
+    .opcoes-formulario {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .botoes-sociais {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Cabeçalho */
+    .cabecalho-login {
+        padding: 12px 0;
+    }
+
+    .container-cabecalho {
+        padding: 0 15px;
+    }
+
+    .logo-login {
+        font-size: 16px;
+    }
+
+    .icone-logo {
+        font-size: 20px;
+    }
+
+    .botao-voltar {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    /* Formulário */
+    .lado-formulario-login {
+        padding: 20px 15px;
+    }
+
+    .abas-formulario {
+        margin-bottom: 25px;
+    }
+
+    .conteudo-formulario h1 {
+        font-size: 22px;
+    }
+
+    .subtitulo-formulario {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .formulario-autenticacao {
+        gap: 15px;
+    }
+
+    .grupo-formulario label {
+        font-size: 12px;
+    }
+
+    .envoltorio-input input {
+        padding: 10px 12px 10px 40px;
+        font-size: 13px;
+    }
+
+    .envoltorio-input i {
+        left: 12px;
+        font-size: 14px;
+    }
+
+    .botao-enviar {
+        padding: 11px 20px;
+        font-size: 13px;
+    }
+
+    .divisor-formulario {
+        margin: 15px 0;
+        font-size: 11px;
+    }
+
+    .divisor-formulario span {
+        padding: 0 8px;
+    }
+}
