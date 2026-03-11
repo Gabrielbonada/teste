@@ -14,8 +14,20 @@
   "dependencies": {
     "bcrypt": "^6.0.0",
     "connect-mongo": "^6.0.0",
+    "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "express-session": "^1.19.0",
-    "mongoose": "^9.2.3"
+    "mongoose": "^9.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gabrielbonada/teste.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Gabrielbonada/teste/issues"
+  },
+  "homepage": "https://github.com/Gabrielbonada/teste#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }

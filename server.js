@@ -1,33 +1,27 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const session = require('express-session');
 
 const app = express();
-app.use(express.json()); // <- IMPORTANTE
 
-app.use(express.static('public'));
-app.use(express.json());
-// conexão
-mongoose.connect('mongodb://localhost:27017/banco_do_robson')
+// conexão Mongo
+mongoose.connect('mongodb://localhost:27017/banco_robson')
     .then(() => console.log('Conectado ao MongoDB'))
-    .catch(err => console.error('Erro ao conectar ao MongoDB:', err));
+    .catch(err => console.error(err));
 
-// schema
-const UsuarioSchema = new mongoose.Schema({
-    nome: String,
-    idade: Number,
-    email: String
-});
+// middlewares
+app.use(express.json());
+app.use(express.static('public'));
 
-// model
-const Usuario = mongoose.model('Usuario', UsuarioSchema);
+app.use(session({
+    secret: 'segredo-super-secreto',
+    resave: false,
+    saveUninitialized: false
+}));
 
-// rota teste
-app.get('/', (req, res) => {
-    res.send('olá');
-});
+// rotas
+app.use(require('./routes/auth'));
 
-
-// servidor
-app.listen(4000, () => {
+app.listen(3000, () => {
     console.log("Servidor rodando na porta 3000");
 });

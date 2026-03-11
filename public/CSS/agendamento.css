@@ -1,0 +1,807 @@
+/**
+ * ================================
+ * ARQUIVO: agendamento.css
+ * DESCRIÇÃO: Estilos específicos para a página de agendamento
+ * FUNCIONALIDADES:
+ *   - Calendário interativo
+ *   - Seletor de horários
+ *   - Formulário responsivo
+ *   - Design moderno e atraente
+ * ================================
+ */
+
+/* ================================
+   VARIÁVEIS LOCAIS
+   ================================ */
+
+:root {
+    --cor-primaria: #2d7a3e;
+    --cor-primaria-clara: #5aa12f;
+    --cor-primaria-escura: #1a4d2e;
+    --cor-secundaria: #f5a623;
+    --cor-acento: #e8f5e9;
+    --cor-escura: #1a1a1a;
+    --cor-clara: #f8f9fa;
+    --cor-cinza: #6c757d;
+    --cor-borda: #e0e0e0;
+    --cor-sucesso: #27ae60;
+    --cor-aviso: #f39c12;
+    --cor-erro: #e74c3c;
+    --sombra-pequena: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --sombra-media: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --sombra-grande: 0 16px 48px rgba(0, 0, 0, 0.15);
+    --transicao: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ================================
+   SEÇÃO AGENDAMENTO - LAYOUT GERAL
+   ================================ */
+
+.secao-agendamento {
+    margin-top: 100px; /* espaço pro header fixo */
+    padding: 60px 20px;
+}
+
+.conteudo-agendamento {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+/* ================================
+   COLUNA CALENDÁRIO
+   ================================ */
+
+.coluna-calendario {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* ================================
+   BLOCO DE SERVIÇO
+   ================================ */
+
+.bloco-servico {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--sombra-media);
+}
+
+.bloco-servico h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--cor-escura);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.opcoes-servico {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.btn-servico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px;
+    border: 2px solid var(--cor-borda);
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    transition: var(--transicao);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--cor-escura);
+    text-align: center;
+}
+
+.btn-servico i {
+    font-size: 24px;
+    color: var(--cor-primaria-clara);
+}
+
+.btn-servico:hover {
+    border-color: var(--cor-primaria-clara);
+    background: var(--cor-acento);
+    transform: translateY(-3px);
+}
+
+.btn-servico.ativo {
+    background: linear-gradient(135deg, var(--cor-primaria-clara), var(--cor-primaria));
+    color: white;
+    border-color: var(--cor-primaria);
+    box-shadow: var(--sombra-media);
+}
+
+.btn-servico.ativo i {
+    color: white;
+}
+
+/* ================================
+   BLOCO CALENDÁRIO
+   ================================ */
+
+.bloco-calendario {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: var(--sombra-media);
+}
+
+.cabecalho-calendario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 15px;
+}
+
+.cabecalho-calendario h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--cor-escura);
+    flex: 1;
+    text-align: center;
+    min-width: 200px;
+}
+
+.btn-nav-mes {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--cor-borda);
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transicao);
+    color: var(--cor-primaria-clara);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-nav-mes:hover {
+    background: var(--cor-acento);
+    border-color: var(--cor-primaria-clara);
+    transform: scale(1.05);
+}
+
+/* Dias da Semana */
+
+.dias-semana {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.dia-semana {
+    text-align: center;
+    font-weight: 700;
+    color: var(--cor-primaria-clara);
+    font-size: 12px;
+    padding: 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Dias do Calendário */
+
+.dias-calendario {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.dia {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--cor-borda);
+    border-radius: 8px;
+    cursor: pointer;
+    background: white;
+    transition: var(--transicao);
+    font-weight: 600;
+    color: var(--cor-escura);
+    font-size: 14px;
+}
+
+.dia:hover:not(.desabilitado) {
+    border-color: var(--cor-primaria-clara);
+    background: var(--cor-acento);
+    transform: translateY(-2px);
+}
+
+.dia.outro-mes {
+    color: var(--cor-borda);
+    cursor: not-allowed;
+    background: #f5f5f5;
+}
+
+.dia.desabilitado {
+    color: #ccc;
+    background: #f5f5f5;
+    cursor: not-allowed;
+    border-color: #ddd;
+}
+
+.dia.selecionado {
+    background: linear-gradient(135deg, var(--cor-primaria-clara), var(--cor-primaria));
+    color: white;
+    border-color: var(--cor-primaria);
+    box-shadow: var(--sombra-media);
+}
+
+.dia.hoje {
+    border-color: var(--cor-secundaria);
+    font-weight: 700;
+}
+
+/* ================================
+   BLOCO HORÁRIOS
+   ================================ */
+
+.bloco-horarios {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: var(--sombra-media);
+}
+
+.bloco-horarios h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--cor-escura);
+    margin-bottom: 10px;
+}
+
+.data-selecionada {
+    font-size: 13px;
+    color: var(--cor-cinza);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.grade-horarios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.btn-horario {
+    padding: 12px;
+    border: 2px solid var(--cor-borda);
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transicao);
+    font-weight: 600;
+    color: var(--cor-escura);
+    font-size: 14px;
+    text-align: center;
+}
+
+.btn-horario:hover:not(.desabilitado) {
+    border-color: var(--cor-primaria-clara);
+    background: var(--cor-acento);
+    transform: translateY(-2px);
+}
+
+.btn-horario.desabilitado {
+    color: #ccc;
+    background: #f5f5f5;
+    cursor: not-allowed;
+    border-color: #ddd;
+}
+
+.btn-horario.selecionado {
+    background: linear-gradient(135deg, var(--cor-primaria-clara), var(--cor-primaria));
+    color: white;
+    border-color: var(--cor-primaria);
+    box-shadow: var(--sombra-media);
+}
+
+.mensagem-horario {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--cor-cinza);
+    padding: 20px;
+    font-style: italic;
+}
+
+/* ================================
+   COLUNA FORMULÁRIO
+   ================================ */
+
+.coluna-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* ================================
+   FORMULÁRIO DE AGENDAMENTO
+   ================================ */
+
+.formulario-agendamento {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: var(--sombra-media);
+}
+
+.formulario-agendamento h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--cor-escura);
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.grupo-formulario {
+    margin-bottom: 20px;
+}
+
+.grupo-formulario label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--cor-escura);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.grupo-formulario label i {
+    color: var(--cor-primaria-clara);
+    font-size: 16px;
+}
+
+.grupo-formulario input,
+.grupo-formulario select,
+.grupo-formulario textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--cor-borda);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: var(--transicao);
+    background: white;
+}
+
+.grupo-formulario input:focus,
+.grupo-formulario select:focus,
+.grupo-formulario textarea:focus {
+    outline: none;
+    border-color: var(--cor-primaria-clara);
+    box-shadow: 0 0 0 3px rgba(90, 161, 47, 0.1);
+}
+
+.grupo-formulario input::placeholder,
+.grupo-formulario textarea::placeholder {
+    color: #bbb;
+}
+
+/* ================================
+   RESUMO DO AGENDAMENTO
+   ================================ */
+
+.resumo-agendamento {
+    background: linear-gradient(135deg, var(--cor-acento), #f0f8f2);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid var(--cor-primaria-clara);
+    margin: 25px 0;
+}
+
+.resumo-agendamento h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--cor-escura);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.item-resumo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(45, 122, 62, 0.1);
+    font-size: 14px;
+}
+
+.item-resumo:last-child {
+    border-bottom: none;
+}
+
+.item-resumo span {
+    color: var(--cor-cinza);
+    font-weight: 500;
+}
+
+.item-resumo strong {
+    color: var(--cor-primaria);
+    font-weight: 700;
+}
+
+/* ================================
+   BOTÃO ENVIAR
+   ================================ */
+
+.botao-completo {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px 32px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* ================================
+   INFORMAÇÕES DE CONTATO
+   ================================ */
+
+.informacoes-contato {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.card-info-contato {
+    background: linear-gradient(135deg, var(--cor-acento), #f0f8f2);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid var(--cor-primaria-clara);
+    transition: var(--transicao);
+}
+
+.card-info-contato:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-media);
+}
+
+.card-info-contato i {
+    font-size: 24px;
+    color: var(--cor-primaria-clara);
+    margin-bottom: 10px;
+}
+
+.card-info-contato h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--cor-escura);
+    margin-bottom: 8px;
+}
+
+.card-info-contato p {
+    font-size: 13px;
+    color: var(--cor-cinza);
+    line-height: 1.6;
+}
+
+/* ================================
+   RESPONSIVO - TABLET
+   ================================ */
+
+@media (max-width: 1024px) {
+    .conteudo-agendamento {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .opcoes-servico {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grade-horarios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .informacoes-contato {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================================
+   RESPONSIVO - MOBILE
+   ================================ */
+
+@media (max-width: 768px) {
+    .secao-agendamento {
+        padding: 60px 15px;
+    }
+
+    .conteudo-agendamento {
+        gap: 30px;
+    }
+
+    .bloco-servico,
+    .bloco-calendario,
+    .bloco-horarios,
+    .formulario-agendamento {
+        padding: 20px;
+    }
+
+    .opcoes-servico {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .btn-servico {
+        padding: 12px;
+        font-size: 11px;
+    }
+
+    .btn-servico i {
+        font-size: 20px;
+    }
+
+    .dias-calendario {
+        gap: 6px;
+    }
+
+    .dia {
+        font-size: 12px;
+    }
+
+    .grade-horarios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .btn-horario {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .formulario-agendamento {
+        padding: 20px;
+    }
+
+    .formulario-agendamento h3 {
+        font-size: 18px;
+    }
+
+    .grupo-formulario input,
+    .grupo-formulario select,
+    .grupo-formulario textarea {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .informacoes-contato {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .card-info-contato {
+        padding: 15px;
+    }
+}
+
+/* ================================
+   RESPONSIVO - CELULAR PEQUENO
+   ================================ */
+
+@media (max-width: 480px) {
+    .secao-agendamento {
+        padding: 40px 12px;
+        margin-top: 70px;
+    }
+
+    .cabecalho-secao {
+        margin-bottom: 30px;
+    }
+
+    .cabecalho-secao h2 {
+        font-size: 24px;
+    }
+
+    .cabecalho-secao p {
+        font-size: 14px;
+    }
+
+    .opcoes-servico {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .btn-servico {
+        padding: 10px;
+        font-size: 10px;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    .btn-servico i {
+        font-size: 18px;
+    }
+
+    .btn-servico span {
+        text-align: left;
+    }
+
+    .cabecalho-calendario {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cabecalho-calendario h3 {
+        min-width: auto;
+        font-size: 16px;
+    }
+
+    .dias-calendario {
+        gap: 4px;
+    }
+
+    .dia {
+        font-size: 11px;
+        padding: 8px 0;
+    }
+
+    .grade-horarios {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-horario {
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    .resumo-agendamento {
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    .resumo-agendamento h4 {
+        font-size: 12px;
+    }
+
+    .item-resumo {
+        font-size: 12px;
+        padding: 6px 0;
+    }
+
+    .grupo-formulario label {
+        font-size: 13px;
+    }
+
+    .grupo-formulario input,
+    .grupo-formulario select,
+    .grupo-formulario textarea {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .botao-completo {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .card-info-contato {
+        padding: 12px;
+    }
+
+    .card-info-contato i {
+        font-size: 20px;
+    }
+
+    .card-info-contato h4 {
+        font-size: 13px;
+    }
+
+    .card-info-contato p {
+        font-size: 12px;
+    }
+}
+
+/* ================================
+   ANIMAÇÕES
+   ================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dia,
+.btn-horario,
+.btn-servico {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* ================================
+   ESTADOS DE VALIDAÇÃO
+   ================================ */
+
+.grupo-formulario input.erro,
+.grupo-formulario textarea.erro {
+    border-color: var(--cor-erro);
+    background: rgba(231, 76, 60, 0.05);
+}
+
+.grupo-formulario input.sucesso,
+.grupo-formulario textarea.sucesso {
+    border-color: var(--cor-sucesso);
+    background: rgba(39, 174, 96, 0.05);
+}
+
+/* ================================
+   NOTIFICAÇÕES
+   ================================ */
+
+.notificacao {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    z-index: 10000;
+    animation: deslizarEntrada 0.3s ease;
+    box-shadow: var(--sombra-media);
+    max-width: 90%;
+}
+
+.notificacao-sucesso {
+    background: var(--cor-sucesso);
+}
+
+.notificacao-erro {
+    background: var(--cor-erro);
+}
+
+.notificacao-info {
+    background: #3498db;
+}
+
+@keyframes deslizarEntrada {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes deslizarSaida {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+}

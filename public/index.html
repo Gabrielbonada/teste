@@ -43,7 +43,7 @@
                 <a href="#inicio" class="link-navegacao">Início</a>
                 <a href="#servicos" class="link-navegacao">Serviços</a>
                 <a href="#sobre" class="link-navegacao">Sobre</a>
-                <a href="#agendamento" class="link-navegacao">Agendamento</a>
+                <a href="HTML/agendamento.html" class="link-navegacao">Agendamento</a>
                 <a href="#faq" class="link-navegacao">FAQ</a>
             </nav>
 
@@ -277,113 +277,12 @@
                     </div>
 
                     <!-- Botão de Ação -->
-                    <a href="#agendamento" class="botao-primario">Agende uma Consulta</a>
+                    <a href="/public/HTML/agendamento.html" class="botao-primario">Agende uma Consulta</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ================================ -->
-    <!-- SEÇÃO AGENDAMENTO               -->
-    <!-- ================================ -->
-    <section class="secao-agendamento" id="agendamento">
-        <div class="container">
-            <!-- Cabeçalho da Seção -->
-            <div class="cabecalho-secao" data-aos="fade-up">
-                <span class="badge-secao">Reserve Seu Horário</span>
-                <h2>Agende Sua Sessão</h2>
-                <p>Escolha o melhor horário para você e comece sua jornada de bem-estar</p>
-            </div>
-
-            <!-- Conteúdo de Agendamento -->
-            <div class="conteudo-agendamento">
-                <!-- Formulário de Agendamento -->
-                <div class="formulario-agendamento" data-aos="fade-right">
-                    <form id="formulario-agendamento">
-                        <!-- Campo: Nome Completo -->
-                        <div class="grupo-formulario">
-                            <label for="nome">Nome Completo</label>
-                            <input type="text" id="nome" name="nome" required>
-                        </div>
-
-                        <!-- Campo: Email -->
-                        <div class="grupo-formulario">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-
-                        <!-- Campo: Telefone -->
-                        <div class="grupo-formulario">
-                            <label for="telefone">Telefone</label>
-                            <input type="tel" id="telefone" name="telefone" required>
-                        </div>
-
-                        <!-- Linha: Serviço e Data -->
-                        <div class="linha-formulario">
-                            <!-- Campo: Serviço -->
-                            <div class="grupo-formulario">
-                                <label for="servico">Serviço</label>
-                                <select id="servico" name="servico" required>
-                                    <option value="">Selecione um serviço</option>
-                                    <option value="relaxante">Massagem Relaxante</option>
-                                    <option value="terapeutica">Massagem Terapêutica</option>
-                                    <option value="drenagem">Drenagem Linfática</option>
-                                    <option value="desportiva">Massagem Desportiva</option>
-                                    <option value="ayurvedica">Massagem Ayurvédica</option>
-                                </select>
-                            </div>
-
-                            <!-- Campo: Data -->
-                            <div class="grupo-formulario">
-                                <label for="data">Data Desejada</label>
-                                <input type="date" id="data" name="data" required>
-                            </div>
-                        </div>
-
-                        <!-- Campo: Observações -->
-                        <div class="grupo-formulario">
-                            <label for="mensagem">Observações (opcional)</label>
-                            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva suas necessidades ou dúvidas..."></textarea>
-                        </div>
-
-                        <!-- Botão Enviar -->
-                        <button type="submit" class="botao-primario botao-completo">Confirmar Agendamento</button>
-                    </form>
-                </div>
-
-                <!-- Informações de Contato -->
-                <div class="informacoes-agendamento" data-aos="fade-left">
-                    <!-- Card: Horários -->
-                    <div class="card-informacao">
-                        <i class="fas fa-clock"></i>
-                        <h3>Horários</h3>
-                        <p>Segunda a Sexta: 08h - 20h<br>Sábado: 09h - 14h</p>
-                    </div>
-
-                    <!-- Card: Localização -->
-                    <div class="card-informacao">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3>Localização</h3>
-                        <p>Rua das Flores, 123<br>Centro - São Paulo, SP</p>
-                    </div>
-
-                    <!-- Card: Contato -->
-                    <div class="card-informacao">
-                        <i class="fas fa-phone"></i>
-                        <h3>Contato</h3>
-                        <p>(11) 9999-9999<br>contato@robsonreinoso.com</p>
-                    </div>
-
-                    <!-- Card: Formas de Pagamento -->
-                    <div class="card-informacao">
-                        <i class="fas fa-credit-card"></i>
-                        <h3>Formas de Pagamento</h3>
-                        <p>Dinheiro, PIX, Cartão<br>Parcelamento disponível</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ================================ -->
     <!-- SEÇÃO FAQ (PERGUNTAS FREQUENTES)-->

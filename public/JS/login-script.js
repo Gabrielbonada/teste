@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const dados = await resposta.json();
 
-                if (dados.msg === "Login feito!") {
+                if (dados.mensagem === "Login feito!") {
                     exibirNotificacao("Login realizado!", "sucesso");
 
                     setTimeout(() => {
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Log dos dados (aqui você faria a requisição para o servidor/MongoDB)
             try {
-                const resposta = await fetch("http://localhost:3000/cadastro", {
+                const resposta = await fetch("http://localhost:3000/register", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ nome, email, senha })

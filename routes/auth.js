@@ -1,42 +1,74 @@
 const express = require('express');
+const router = express.Router();
 const bcrypt = require('bcrypt');
 const Usuario = require('../models/usuario');
 
-const router = express.Router();
 
-router.post('/cadastro', async (req, res) => {
+// REGISTRO
+router.post('/register', async (req, res) => {
+
     const { nome, email, senha } = req.body;
 
-    const senhaHash = await bcrypt.hash(senha, 10);
+    const usuarioExistente = await Usuario.findOne({ email });
 
-    try {
-        await Usuario.create({ nome, email, senha: senhaHash });
-        res.json({ msg: "Usuário criado!" });
-    } catch {
-        res.json({ msg: "Email já existe" });
+    if (usuarioExistente) {
+        return res.status(400).json({ erro: "Email já cadastrado" });
     }
+
+    const senhaCriptografada = await bcrypt.hash(senha, 10);
+
+    const novoUsuario = new Usuario({
+        nome,
+        email,
+        senha: senhaCriptografada
+    });
+
+    await novoUsuario.save();
+
+    res.json({ mensagem: "Usuário criado com sucesso" });
 });
 
+
+// LOGIN
 router.post('/login', async (req, res) => {
+
     const { email, senha } = req.body;
 
     const usuario = await Usuario.findOne({ email });
 
-    if (!usuario)
-        return res.json({ msg: "Usuário não encontrado" });
+    if (!usuario) {
+        return res.status(400).json({ erro: "Usuário não encontrado" });
+    }
 
-    const ok = await bcrypt.compare(senha, usuario.senha);
+    const senhaValida = await bcrypt.compare(senha, usuario.senha);
 
-    if (!ok)
-        return res.json({ msg: "Senha errada" });
+    if (!senhaValida) {
+        return res.status(400).json({ erro: "Senha incorreta" });
+    }
 
     req.session.usuarioId = usuario._id;
-    res.json({ msg: "Login feito!" });
+
+    res.json({ mensagem: "Login realizado com sucesso" });
 });
 
+
+// VER USUÁRIO LOGADO
+router.get('/me', async (req, res) => {
+
+    if (!req.session.usuarioId) {
+        return res.json({ usuario: null });
+    }
+
+    const usuario = await Usuario.findById(req.session.usuarioId);
+
+    res.json({ usuario });
+});
+
+
+// LOGOUT
 router.get('/logout', (req, res) => {
     req.session.destroy();
-    res.json({ msg: "Saiu" });
+    res.json({ mensagem: "Logout realizado" });
 });
 
 module.exports = router;

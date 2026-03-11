@@ -6,13 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Robson Reinoso Massoterapia</title>
-    
+
     <!-- Fontes Externas -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Ícones Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Estilos de Login -->
     <link rel="stylesheet" href="../CSS/login-estilos.css">
 </head>
@@ -32,7 +34,7 @@
                 <span class="icone-logo">🧘</span>
                 <span>Robson <strong>Reinoso</strong></span>
             </a>
-            
+
             <!-- Botão Voltar -->
             <a href="../index.html" class="botao-voltar">
                 <i class="fas fa-arrow-left"></i> Voltar
@@ -44,13 +46,14 @@
     <!-- CONTEÚDO PRINCIPAL DE LOGIN     -->
     <!-- ================================ -->
     <div class="envoltorio-login">
-        
+
         <!-- Lado Esquerdo - Imagem -->
         <div class="lado-imagem-login">
             <div class="container-imagem">
                 <!-- Imagem de Fundo -->
-                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=800&fit=crop" alt="Massoterapia">
-                
+                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=800&fit=crop"
+                    alt="Massoterapia">
+
                 <!-- Overlay com Texto -->
                 <div class="sobreposicao-imagem">
                     <h2>Bem-vindo de Volta!</h2>
@@ -62,14 +65,14 @@
         <!-- Lado Direito - Formulários -->
         <div class="lado-formulario-login">
             <div class="container-formulario">
-                
+
                 <!-- Abas de Navegação (Login / Cadastro) -->
                 <div class="abas-formulario">
                     <!-- Aba Login -->
                     <button class="botao-aba ativo" data-aba="login">
                         <i class="fas fa-sign-in-alt"></i> Login
                     </button>
-                    
+
                     <!-- Aba Cadastro -->
                     <button class="botao-aba" data-aba="cadastro">
                         <i class="fas fa-user-plus"></i> Cadastro
@@ -109,7 +112,7 @@
                                 <input type="checkbox" name="remember">
                                 <span>Lembrar-me</span>
                             </label>
-                            
+
                             <!-- Link Esqueceu Senha -->
                             <a href="#" class="link-esqueceu">Esqueceu a senha?</a>
                         </div>
@@ -149,7 +152,8 @@
                             <label for="nome-cadastro">Nome Completo</label>
                             <div class="envoltorio-input">
                                 <i class="fas fa-user"></i>
-                                <input type="text" id="nome-cadastro" name="nome" placeholder="Seu nome completo" required>
+                                <input type="text" id="nome-cadastro" name="nome" placeholder="Seu nome completo"
+                                    required>
                             </div>
                         </div>
 
@@ -158,7 +162,8 @@
                             <label for="email-cadastro">Email</label>
                             <div class="envoltorio-input">
                                 <i class="fas fa-envelope"></i>
-                                <input type="email" id="email-cadastro" name="email" placeholder="seu@email.com" required>
+                                <input type="email" id="email-cadastro" name="email" placeholder="seu@email.com"
+                                    required>
                             </div>
                         </div>
 
@@ -167,7 +172,8 @@
                             <label for="telefone-cadastro">Telefone</label>
                             <div class="envoltorio-input">
                                 <i class="fas fa-phone"></i>
-                                <input type="tel" id="telefone-cadastro" name="telefone" placeholder="(11) 99999-9999" required>
+                                <input type="tel" id="telefone-cadastro" name="telefone" placeholder="(11) 99999-9999"
+                                    required>
                             </div>
                         </div>
 
@@ -176,7 +182,8 @@
                             <label for="senha-cadastro">Senha</label>
                             <div class="envoltorio-input">
                                 <i class="fas fa-lock"></i>
-                                <input type="password" id="senha-cadastro" name="password" placeholder="••••••••" required>
+                                <input type="password" id="senha-cadastro" name="password" placeholder="••••••••"
+                                    required>
                             </div>
                         </div>
 
@@ -185,14 +192,16 @@
                             <label for="confirmar-senha">Confirmar Senha</label>
                             <div class="envoltorio-input">
                                 <i class="fas fa-lock"></i>
-                                <input type="password" id="confirmar-senha" name="password_confirm" placeholder="••••••••" required>
+                                <input type="password" id="confirmar-senha" name="password_confirm"
+                                    placeholder="••••••••" required>
                             </div>
                         </div>
 
                         <!-- Aceitar Termos -->
                         <label class="label-checkbox largura-completa">
                             <input type="checkbox" name="terms" required>
-                            <span>Concordo com os <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a></span>
+                            <span>Concordo com os <a href="#">Termos de Uso</a> e <a href="#">Política de
+                                    Privacidade</a></span>
                         </label>
 
                         <!-- Botão Enviar -->
@@ -204,9 +213,63 @@
             </div>
         </div>
     </div>
+    <script src="login-script.js"></script>
 
-    <!-- Script de Login -->
-    <script src="../JS/login-script.js"></script>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const botoes = document.querySelectorAll(".botao-aba");
+            const conteudos = document.querySelectorAll(".conteudo-formulario");
+
+            botoes.forEach(botao => {
+                botao.addEventListener("click", function () {
+
+                    const aba = this.dataset.aba;
+
+                    // remove ativo
+                    botoes.forEach(b => b.classList.remove("ativo"));
+                    conteudos.forEach(c => c.classList.remove("ativo"));
+
+                    // ativa selecionado
+                    this.classList.add("ativo");
+                    document.getElementById(aba).classList.add("ativo");
+
+                });
+            });
+
+        });
+
+        document.getElementById("formulario-cadastro").addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    const dados = {
+        nome: document.getElementById("nome-cadastro").value,
+        email: document.getElementById("email-cadastro").value,
+        telefone: document.getElementById("telefone-cadastro").value,
+        senha: document.getElementById("senha-cadastro").value
+    };
+
+    console.log("Enviando dados:", dados);
+
+    const resposta = await fetch("http://localhost:3000/auth/cadastro", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dados)
+    });
+
+    const resultado = await resposta.json();
+
+    console.log("Resposta:", resultado);
+
+});
+
+    </script>
+
 </body>
 
 </html>

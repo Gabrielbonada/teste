@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendando sua Massagem!</title>
+
+    <!-- Fontes Externas -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Biblioteca AOS (Animate On Scroll) para animações ao rolar a página -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="../CSS/estilos.css">
+    <link rel="stylesheet" href="../CSS/agendamento.css">
+</head>
+
+<body>
+
+    <!-- Overlay para escurecer fundo quando menu está aberto -->
+    <div id="sobreposicao" class="sobreposicao"></div>
+
+    <!-- ================================ -->
+    <!-- CABEÇALHO PREMIUM               -->
+    <!-- ================================ -->
+    <header class="cabecalho-premium">
+        <div class="container-cabecalho">
+            <!-- Logo e Marca -->
+            <div class="logo-premium">
+                <span class="icone-logo">💆</span>
+                <span class="texto-logo">Robson <strong>Reinoso</strong></span>
+            </div>
+
+            <!-- Navegação Desktop -->
+            <nav class="navegacao-desktop">
+                <a href="../index.html" class="link-navegacao">Voltar</a>
+                <a href="#agendamento" class="link-navegacao">Agendamento</a>
+            </nav>
+
+            <!-- Ações do Cabeçalho -->
+            <div class="acoes-cabecalho">
+                <a href="../index.html" class="botao-cabecalho-primario">Voltar ao Início</a>
+                <button id="alternador-menu" class="botao-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================================ -->
+    <!-- MENU LATERAL (SIDEBAR)          -->
+    <!-- ================================ -->
+    <nav id="barra-lateral" class="barra-lateral-mobile">
+        <button id="fechar-barra" class="botao-fechar">&times;</button>
+        <ul class="links-navegacao-mobile">
+            <li><a href="../index.html">Voltar</a></li>
+            <li><a href="#agendamento">Agendamento</a></li>
+        </ul>
+    </nav>
+
+    <!-- ================================ -->
+    <!-- SEÇÃO AGENDAMENTO               -->
+    <!-- ================================ -->
+    <section class="secao-agendamento" id="agendamento">
+        <div class="container">
+            <!-- Cabeçalho da Seção -->
+            <div class="cabecalho-secao" data-aos="fade-up">
+                <span class="badge-secao">Reserve Seu Horário</span>
+                <h2>Agende Sua Sessão de Massagem</h2>
+                <p>Escolha a data e horário que melhor se adequa à sua agenda</p>
+            </div>
+
+            <!-- Conteúdo de Agendamento -->
+            <div class="conteudo-agendamento">
+                <!-- Coluna 1: Calendário e Horários -->
+                <div class="coluna-calendario" data-aos="fade-right">
+                    <!-- Seletor de Serviço -->
+                    <div class="bloco-servico">
+                        <h3>Selecione o Serviço</h3>
+                        <div class="opcoes-servico">
+                            <button class="btn-servico ativo" data-servico="relaxante">
+                                <i class="fas fa-spa"></i>
+                                <span>Relaxante</span>
+                            </button>
+                            <button class="btn-servico" data-servico="terapeutica">
+                                <i class="fas fa-hand-holding-medical"></i>
+                                <span>Terapêutica</span>
+                            </button>
+                            <button class="btn-servico" data-servico="drenagem">
+                                <i class="fas fa-water"></i>
+                                <span>Drenagem</span>
+                            </button>
+                            <button class="btn-servico" data-servico="desportiva">
+                                <i class="fas fa-heart-pulse"></i>
+                                <span>Desportiva</span>
+                            </button>
+                            <button class="btn-servico" data-servico="ayurvedica">
+                                <i class="fas fa-leaf"></i>
+                                <span>Ayurvédica</span>
+                            </button>
+                            <button class="btn-servico" data-servico="domicilio">
+                                <i class="fas fa-person-hiking"></i>
+                                <span>Domicílio</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Calendário -->
+                    <div class="bloco-calendario">
+                        <div class="cabecalho-calendario">
+                            <button id="btn-mes-anterior" class="btn-nav-mes">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <h3 id="mes-ano-atual"></h3>
+                            <button id="btn-proximo-mes" class="btn-nav-mes">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Dias da Semana -->
+                        <div class="dias-semana">
+                            <div class="dia-semana">Dom</div>
+                            <div class="dia-semana">Seg</div>
+                            <div class="dia-semana">Ter</div>
+                            <div class="dia-semana">Qua</div>
+                            <div class="dia-semana">Qui</div>
+                            <div class="dia-semana">Sex</div>
+                            <div class="dia-semana">Sab</div>
+                        </div>
+
+                        <!-- Dias do Calendário -->
+                        <div class="dias-calendario" id="dias-calendario"></div>
+                    </div>
+
+                    <!-- Horários Disponíveis -->
+                    <div class="bloco-horarios">
+                        <h3>Horários Disponíveis</h3>
+                        <p class="data-selecionada" id="data-selecionada">Selecione uma data</p>
+                        <div class="grade-horarios" id="grade-horarios">
+                            <p class="mensagem-horario">Escolha uma data para ver os horários disponíveis</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna 2: Formulário -->
+                <div class="coluna-formulario" data-aos="fade-left">
+                    <div class="formulario-agendamento">
+                        <h3>Seus Dados</h3>
+                        <form id="formulario-agendamento">
+                            <!-- Campo: Nome Completo -->
+                            <div class="grupo-formulario">
+                                <label for="nome">
+                                    <i class="fas fa-user"></i> Nome Completo
+                                </label>
+                                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                            </div>
+
+                            <!-- Campo: Email -->
+                            <div class="grupo-formulario">
+                                <label for="email">
+                                    <i class="fas fa-envelope"></i> Email
+                                </label>
+                                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                            </div>
+
+                            <!-- Campo: Telefone -->
+                            <div class="grupo-formulario">
+                                <label for="telefone">
+                                    <i class="fas fa-phone"></i> Telefone
+                                </label>
+                                <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required>
+                            </div>
+
+                            <!-- Resumo da Seleção -->
+                            <div class="resumo-agendamento">
+                                <h4>Resumo do Agendamento</h4>
+                                <div class="item-resumo">
+                                    <span>Serviço:</span>
+                                    <strong id="resumo-servico">-</strong>
+                                </div>
+                                <div class="item-resumo">
+                                    <span>Data:</span>
+                                    <strong id="resumo-data">-</strong>
+                                </div>
+                                <div class="item-resumo">
+                                    <span>Horário:</span>
+                                    <strong id="resumo-horario">-</strong>
+                                </div>
+                            </div>
+
+                            <!-- Campo: Observações -->
+                            <div class="grupo-formulario">
+                                <label for="mensagem">
+                                    <i class="fas fa-comment"></i> Observações (opcional)
+                                </label>
+                                <textarea id="mensagem" name="mensagem" rows="3"
+                                    placeholder="Descreva suas necessidades..."></textarea>
+                            </div>
+
+                            <!-- Botão Enviar -->
+                            <button type="submit" class="botao-primario botao-completo">
+                                <i class="fas fa-check-circle"></i> Confirmar Agendamento
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Informações de Contato -->
+                    <div class="informacoes-contato">
+                        <div class="card-info-contato">
+                            <i class="fas fa-clock"></i>
+                            <h4>Horários</h4>
+                            <p>Seg-Sex: 08h - 20h<br>Sab: 09h - 14h</p>
+                        </div>
+                        <div class="card-info-contato">
+                            <i class="fas fa-phone"></i>
+                            <h4>Contato</h4>
+                            <p>(11) 9999-9999<br>contato@robsonreinoso.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+</body>
+
+</html>
